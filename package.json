@@ -1,0 +1,23 @@
+{
+  "name": "bcs-digital-credit",
+  "version": "1.0.0",
+  "description": "Automated software testing with playwright",
+  "main": "index.js",
+  "scripts": {
+    "tests:e2eC": "playwright test --config=e2e.config.ts --project=Chromium",
+    "tests:e2eCH": "playwright test --config=e2e.config.ts --project=Chromium --headed",
+    "tests:e2eF": "playwright test --config=e2e.config.ts --project=Firefox",
+    "tests:e2eFH": "playwright test --config=e2e.config.ts --project=Firefox --headed",
+    "tests:e2eW": "playwright test --config=e2e.config.ts --project=Webkit",
+    "tests:e2eWH": "playwright test --config=e2e.config.ts --project=Webkit --headed",
+    "tests:Pixel5": "playwright test --config=e2e.config.ts --project=MobileChromePixel5 --headed",
+    "tests:Iphone12": "playwright test --config=e2e.config.ts --project=MobileSafariIphone12 --headed",
+    "tests:TabletGalaxyS5": "playwright test --config=e2e.config.ts --project=TabletChromeGalaxyS5 --headed"
+  },
+  "author": "Mauricio Gavilan",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.25.2",
+    "prettier": "^2.7.1"
+  }
+}
