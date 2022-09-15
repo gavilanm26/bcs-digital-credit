@@ -1,7 +1,7 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { AbstractPage} from "../utils/AbstractPage";
 
-export class landingPage extends AbstractPage {
+class landingPage extends AbstractPage {
     readonly txtComoSolicitarlo: Locator
     readonly bntSolicitar1: Locator
     readonly bntSolicitar2: Locator
@@ -20,3 +20,4 @@ export class landingPage extends AbstractPage {
         await this.bntSolicitar1.click()
     }
 }
+export default landingPage
