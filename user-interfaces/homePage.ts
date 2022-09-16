@@ -1,6 +1,6 @@
-import  { Locator, Page } from '@playwright/test';
+import  { Page } from '@playwright/test';
 
-export class HomePage {
+class HomePage {
     public readonly page: Page;
 
     constructor(page: Page) {
@@ -11,3 +11,5 @@ export class HomePage {
         await this.page.goto('/credito/');
     }
 }
+
+export default HomePage
