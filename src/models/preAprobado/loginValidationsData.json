@@ -1,0 +1,52 @@
+[
+  {
+    "tittle": "mensaje: Mínimo 3 caracteres",
+    "message": "Mínimo 3 caracteres",
+    "documentNumber": "87",
+    "type": "CC"
+  },
+  {
+    "tittle": "mensaje: Mínimo 8 caracteres",
+    "message": "Mínimo 8 caracteres",
+    "documentNumber": "mauro87",
+    "type": "US"
+  },
+  {
+    "tittle": "mensaje: Máximo 10 caracteres permitidos",
+    "message": "Máximo 10 caracteres permitidos",
+    "documentNumber": "12345678901",
+    "type": "CC"
+  },
+  {
+    "tittle": "mensaje: Máximo 18 caracteres permitidos",
+    "message": "Máximo 18 caracteres permitidos",
+    "documentNumber": "mauro8797454jhveciono",
+    "type": "US"
+  },
+  {
+    "tittle": "mensaje: Debe estar formado por mínimo 2 números",
+    "message": "Debe estar formado por mínimo 2 números",
+    "documentNumber": "mauricio",
+    "type": "US"
+  },
+  {
+    "tittle": "mensaje: No se permiten caracteres repetidos",
+    "message": "No se permiten caracteres repetidos",
+    "documentNumber": "mauricio22",
+    "type": "US"
+  },
+  {
+    "tittle": "mensaje: No se permiten: ñ caracteres especiales ni espacios",
+    "message": "No se permiten: ñ caracteres especiales ni espacios",
+    "documentNumber": "mauricio23456$",
+    "type": "US"
+  },
+  {
+    "tittle": "modal datos incorrecto",
+    "message": "Por favor verifique e intente de nuevo"
+  },
+  {
+    "tittle": "modal usuario bloqueado",
+    "message": "Usuario bloqueado, por favor intente de nuevo en 24 horas"
+  }
+]
