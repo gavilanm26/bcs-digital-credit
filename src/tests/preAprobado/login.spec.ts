@@ -2,10 +2,10 @@ import {test} from "@playwright/test";
 import HomePage from "../../UI/preAprobado/url";
 import LandingPage from "../../UI/preAprobado/landingUI";
 import loginPage from "../../UI/preAprobado/loginUI"
-const dataset = JSON.parse(JSON.stringify(require("../../models/preAprobado/loginData.json")))
+const dataset = JSON.parse(JSON.stringify(require("../../models/preAprobado/data.json")))
 const validation = JSON.parse(JSON.stringify(require("../../models/preAprobado/loginValidationsData.json")))
 
-test.describe.parallel('Validación de canales digitales', async () => {
+test.describe.parallel('Validaciones login', async () => {
   let url
   let landingUI
   let login
@@ -20,13 +20,13 @@ test.describe.parallel('Validación de canales digitales', async () => {
 
   //for (const data of dataset) {
   dataset.forEach(data => {
-    test.only(`cliente ${data.documentNumberPP} con canales digitales`,
+    test(`cliente ${data.documentNumberPP} con canales digitales`,
       async ({page,
                request,baseURL}) => {
       await login.digitals(data.documentNumberPP)
       await login.screenPassword(data.textPassword, data.password)
-      const _response = await request.get(`${baseURL}/bcs-loans/api-composer/business-restrictions/VTJGc2RHVmtYMStkUURaTlZ3a2ROM3JyZ0E4NVNyRGxIcExwUTRIRXpVST0=`)
-        console.log(await _response.json())
+      //const _response = await request.get(`${baseURL}/bcs-loans/api-composer/business-restrictions/VTJGc2RHVmtYMStkUURaTlZ3a2ROM3JyZ0E4NVNyRGxIcExwUTRIRXpVST0=`)
+        //console.log(await _response.json())
     })
   })
 

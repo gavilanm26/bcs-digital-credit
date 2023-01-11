@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 
-const offerPage = class {
+const offerUI = class {
   private readonly textOffer: Locator
   private readonly steps: Locator
 
@@ -9,10 +9,10 @@ const offerPage = class {
     this.steps = page.getByTestId('stepNumber')
   }
 
-  async screeOffer(textOffer: string, stepOffer: string){
+  async screenOffer(textOffer: string, stepOffer: string){
     await expect(this.textOffer).toContainText(textOffer);
     await expect(this.steps).toContainText(stepOffer);
   }
 }
 
-export default offerPage
+export default offerUI

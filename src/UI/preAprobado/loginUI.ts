@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 
-const loginPage = class {
+const loginUI = class {
 
   private readonly selectDT: Locator
   private readonly selectCC: Locator
@@ -54,6 +54,6 @@ const loginPage = class {
     await expect(this)
   }
 }
-export default loginPage
+export default loginUI
 
 

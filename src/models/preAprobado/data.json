@@ -5,6 +5,8 @@
     "documentNumberIV": "1030618791",
     "password": "ibcs0011",
     "loader": "Estamos validando su información",
-    "textIV": "Por su seguridad validaremos su identidad"
+    "textIV": "Por su seguridad validaremos su identidad",
+    "textOffer": "Personalice su oferta",
+    "stepOffer": "Paso 1 de 4"
   }
 ]
