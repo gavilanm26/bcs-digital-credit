@@ -1,37 +1,33 @@
 import {test} from "@playwright/test";
-import HomePage from "../../UI/preAprobado/url";
-import LandingPage from "../../UI/preAprobado/landingUI";
-import loginPage from "../../UI/preAprobado/loginUI"
+import urlInteraction from "../../interactions/preAprobado/urlInteraction";
+import landingInteraction from "../../interactions/preAprobado/landingInteraction";
+import loginInteraction from "../../interactions/preAprobado/loginInteraction"
 const dataset = JSON.parse(JSON.stringify(require("../../models/preAprobado/data.json")))
-const validation = JSON.parse(JSON.stringify(require("../../models/preAprobado/loginValidationsData.json")))
+//const validation = JSON.parse(JSON.stringify(require("../../models/preAprobado/loginValidationsData.json")))
 
-test.describe.parallel('Validaciones login', async () => {
+test.describe.parallel('Login', async () => {
   let url
-  let landingUI
+  let landing
   let login
 
-  test.beforeEach(async ({page, context}) => {
-    url = new HomePage(page)
-    landingUI = new LandingPage(page)
-    login = new loginPage(page)
+  test.beforeEach(async ({page}) => {
+    url = new urlInteraction(page)
+    landing = new landingInteraction(page)
+    login = new loginInteraction(page)
     await url.visit()
-    await landingUI.clickButton()
+    await landing.clickButton()
   })
 
   //for (const data of dataset) {
   dataset.forEach(data => {
-    test(`cliente ${data.documentNumberPP} con canales digitales`,
-      async ({page,
-               request,baseURL}) => {
+    test(`cliente ${data.documentNumberPP} con canales digitales`,async () => {
       await login.digitals(data.documentNumberPP)
       await login.screenPassword(data.textPassword, data.password)
-      //const _response = await request.get(`${baseURL}/bcs-loans/api-composer/business-restrictions/VTJGc2RHVmtYMStkUURaTlZ3a2ROM3JyZ0E4NVNyRGxIcExwUTRIRXpVST0=`)
-        //console.log(await _response.json())
     })
   })
 
   dataset.forEach(data => {
-    test(`cliente ${data.documentNumberIV} sin canales digitales`, async ({page}) => {
+    test(`cliente ${data.documentNumberIV} sin canales digitales`, async () => {
       await login.digitals(data.documentNumberIV)
       await login.identityValidation(data.textIV)
     })

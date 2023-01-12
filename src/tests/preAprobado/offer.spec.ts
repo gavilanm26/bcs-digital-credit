@@ -1,11 +1,11 @@
 import {test} from "@playwright/test";
-import HomePage from "../../UI/preAprobado/url";
-import LandingPage from "../../UI/preAprobado/landingUI";
-import loginPage from "../../UI/preAprobado/loginUI";
-import offerPage from "../../UI/preAprobado/offerUI";
+import urlInteraction from "../../interactions/preAprobado/urlInteraction";
+import landingInteraction from "../../interactions/preAprobado/landingInteraction";
+import loginInteraction from "../../interactions/preAprobado/loginInteraction"
+import offerInteraction from "../../interactions/preAprobado/offerInteraction";
 const dataset = JSON.parse(JSON.stringify(require("../../models/preAprobado/data.json")))
 
-test.describe('Validaciones de la oferta', async () => {
+test.describe('Personalización de la oferta', async () => {
 
   let url
   let landing
@@ -14,10 +14,10 @@ test.describe('Validaciones de la oferta', async () => {
 
   dataset.forEach(data => {
     test.beforeEach(async ({ page }) => {
-      url = new HomePage(page)
-      landing = new LandingPage(page)
-      login = new loginPage(page)
-      offer = new offerPage(page)
+      url = new urlInteraction(page)
+      landing = new landingInteraction(page)
+      login = new loginInteraction(page)
+      offer = new offerInteraction(page)
       await url.visit()
       await landing.clickButton()
       await login.digitals(data.documentNumberPP)
@@ -26,7 +26,7 @@ test.describe('Validaciones de la oferta', async () => {
   })
 
   dataset.forEach(data => {
-    test.only('validar estar en el paso 1', async () => {
+    test.only('paso 1 de 4', async () => {
       await offer.screenOffer(data.textOffer, data.stepOffer)
     })
   })

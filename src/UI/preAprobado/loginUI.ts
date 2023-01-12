@@ -1,17 +1,17 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 
 const loginUI = class {
 
-  private readonly selectDT: Locator
-  private readonly selectCC: Locator
-  private readonly selectUS: Locator
-  private readonly inputDtN: Locator
-  private readonly checkTerms: Locator
-  private readonly checkBussiness: Locator
-  private readonly btnStart: Locator
-  private readonly textPassword: Locator
-  private readonly textIV: Locator
-  private readonly inputPassword: Locator
+  protected readonly selectDT: Locator
+  protected readonly selectCC: Locator
+  protected readonly selectUS: Locator
+  protected readonly inputDtN: Locator
+  protected readonly checkTerms: Locator
+  protected readonly checkBussiness: Locator
+  protected readonly btnStart: Locator
+  protected readonly textPassword: Locator
+  protected readonly textIV: Locator
+  protected readonly inputPassword: Locator
   constructor(page: Page) {
     this.selectDT = page.getByRole('button', { name: 'Tipo de documento' })
     this.selectCC = page.getByRole('option', { name: 'Cédula de ciudadanía' })
@@ -23,35 +23,6 @@ const loginUI = class {
     this.textPassword = page.getByText('Por su seguridad validaremos su identidad; ingrese la contraseña que usa para ac')
     this.inputPassword = page.getByPlaceholder('')
     this.textIV = page.getByRole('heading', { name: 'Por su seguridad validaremos su identidad' })
-
-  }
-  async digitals(documentNumber: string) {
-    await this.selectDT.click()
-    await this.selectCC.click()
-    await this.inputDtN.type(documentNumber)
-    await this.checkTerms.check()
-    await this.checkBussiness.check()
-    await this.btnStart.click()
-  }
-  async screenPassword(textPassword: string, password: string) {
-    await expect(this.textPassword).toContainText(textPassword);
-    await this.inputPassword.type(password)
-    await this.btnStart.click()
-  }
-
-  async identityValidation(textIV: string) {
-    await expect(this.textIV).toHaveText(textIV);
-  }
-
-  async validations(type: string, documentNumber: string, message: string) {
-    await this.selectDT.click()
-    if(type == 'US') {
-      await this.selectUS.click()
-    } else {
-      await this.selectCC.click()
-    }
-    await this.inputDtN.type(documentNumber)
-    await expect(this)
   }
 }
 export default loginUI
