@@ -8,7 +8,7 @@
     "test:firefox": "playwright test --config=playwright.config.ts --project=Firefox --headed",
     "test:safari": "playwright test --config=playwright.config.ts --project=Webkit --headed",
     "test:iphone12": "playwright test --config=playwright.config.ts --project=Iphone12 --headed",
-    "test:google-Chrome": "playwright test --config=playwright.config.ts --project=Google-Chrome --headed",
+    "test:google-chrome": "playwright test --config=playwright.config.ts --project=Google-Chrome --headed",
     "test:edge": "playwright test --config=playwright.config.ts --project=Microsoft-Edge --headed"
   },
   "author": "Mauricio Gavilan",

@@ -1,10 +1,10 @@
 import  { Page } from '@playwright/test';
 
-const url = class  {
+const urlUI = class  {
   protected readonly page: Page;
   constructor(page: Page) {
     this.page = page;
   }
 }
 
-export default url
+export default urlUI

@@ -26,7 +26,7 @@ test.describe('Personalización de la oferta', async () => {
   })
 
   dataset.forEach(data => {
-    test.only('paso 1 de 4', async () => {
+    test('paso 1 de 4', async () => {
       await offer.screenOffer(data.textOffer, data.stepOffer)
     })
   })
