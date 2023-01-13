@@ -3,6 +3,7 @@ import urlInteraction from "../../interactions/preAprobado/urlInteraction";
 import landingInteraction from "../../interactions/preAprobado/landingInteraction";
 import loginInteraction from "../../interactions/preAprobado/loginInteraction"
 import offerInteraction from "../../interactions/preAprobado/offerInteraction";
+import { setup } from "./setup";
 const dataset = JSON.parse(JSON.stringify(require("../../models/preAprobado/data.json")))
 
 test.describe('Personalización de la oferta', async () => {
@@ -14,14 +15,7 @@ test.describe('Personalización de la oferta', async () => {
 
   dataset.forEach(data => {
     test.beforeEach(async ({ page }) => {
-      url = new urlInteraction(page)
-      landing = new landingInteraction(page)
-      login = new loginInteraction(page)
-      offer = new offerInteraction(page)
-      await url.visit()
-      await landing.clickButton()
-      await login.digitals(data.documentNumberPP)
-      await login.screenPassword(data.textPassword, data.password)
+      await setup(page)
     })
   })
 
