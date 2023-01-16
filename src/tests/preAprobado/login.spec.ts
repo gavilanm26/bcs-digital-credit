@@ -1,27 +1,32 @@
 import {test} from "@playwright/test"
 import baseTest from "./baseTest"
-const dataset = JSON.parse(JSON.stringify(require("../../models/preAprobado/data.json")))
-test.describe('Login', async () => {
-  let login
-  let loginTest
+import dataset from "../../utils/dataset";
+test.describe.parallel.only('Login', async () => {
+  let base
 
   test.beforeEach(async({page}) => {
-    loginTest = new baseTest(page)
-    await loginTest.visitPage()
-    await loginTest.clickCredito()
+    base = new baseTest(page)
+    await base.visitPage()
 
   })
-  dataset.forEach(data => {
-    test.only(`cliente ${data.documentNumberPP} con canales digitales`, async () => {
-      await loginTest.loginForm().digitals(data.documentNumberPP)
-      await loginTest.loginForm().screenPassword(data.textPassword, data.password)
+  for (const data of dataset){
+    test(`cliente ${data.documentNumberPP} con canales digitales`, async () => {
+      const loginData = {
+        number: data.documentNumberPP,
+        textPassword: data.textPassword,
+        password: data.password, textIV:
+        data.textIV
+      }
+      await base.login(loginData)
     })
-  })
 
-  dataset.forEach(data => {
     test(`cliente ${data.documentNumberIV} sin canales digitales`, async () => {
-      await login.digitals(data.documentNumberIV)
-      await login.identityValidation(data.textIV)
+      const loginData = {
+        number: data.documentNumberIV,
+        textPassword: data.textPassword,
+        textIV: data.textIV
+      }
+      await base.login(loginData)
     })
-  })
+  }
 })

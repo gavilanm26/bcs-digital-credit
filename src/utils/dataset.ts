@@ -1,7 +1,7 @@
 const dataset = (
     JSON.parse(
       JSON.stringify(
-        require("../models/preAprobado/data.json")
+        require("../models/preAprobado/json/data.json")
       )
     )
   )
