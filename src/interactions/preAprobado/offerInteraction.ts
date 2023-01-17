@@ -2,9 +2,17 @@ import { expect } from "@playwright/test";
 import offerUI from "../../UI/preAprobado/offerUI";
 
 const offerInteractions = class extends offerUI {
-  async screenOffer(textOffer: string, stepOffer: string) {
+  async screenOffer(textOffer: string, step: string) {
     await expect(this.textOffer).toContainText(textOffer);
-    await expect(this.steps).toContainText(stepOffer);
+    await expect(this.steps).toContainText(step);
+  }
+  async selectFecha(){
+    await this.editarFecha.click()
+    await this.numeroFecha.click()
+    await this.btnFecha.click()
+  }
+  async siguiente(){
+    await this.btnOferta.click()
   }
 }
 

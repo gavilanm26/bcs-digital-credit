@@ -7,6 +7,10 @@
     "loader": "Estamos validando su información",
     "textIV": "Por su seguridad validaremos su identidad",
     "textOffer": "Personalice su oferta",
-    "stepOffer": "Paso 1 de 4"
+    "stepOffer": "Paso 1 de 4",
+    "textAccount": "Seleccionar cuenta",
+    "stepAccount": "Paso 2 de 4",
+    "checkYes": "yes",
+    "checkNo": "no"
   }
 ]

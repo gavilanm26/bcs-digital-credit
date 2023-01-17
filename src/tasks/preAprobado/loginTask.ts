@@ -1,8 +1,8 @@
 import loginInteraction from "../../interactions/preAprobado/loginInteraction";
-import loginFormData from "../../models/preAprobado/interfaces/interfaceData";
+import formData from "../../models/preAprobado/interfaces/interfaceData";
 
 const loginTask = class {
-  private page
+  private readonly page
   private login
 
   constructor(page){
@@ -14,7 +14,7 @@ const loginTask = class {
   }
 
   async loginForm(
-    data: loginFormData
+    data: formData
   ){
     if (data.number === '8797910') {
       await this.login.digitals(data.number)

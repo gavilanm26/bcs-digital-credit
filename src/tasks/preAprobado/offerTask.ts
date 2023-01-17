@@ -1,24 +1,34 @@
-import { test } from "@playwright/test";
+import formData from "../../models/preAprobado/interfaces/interfaceData";
 import offerInteraction from "../../interactions/preAprobado/offerInteraction";
 
 const offerTask = class {
-  private page;
-  private dataset;
-  private offer;
+  private readonly page
+  private offer
 
-  constructor(page, dataset) {
+  constructor(page) {
     this.page = page;
-    this.dataset = dataset;
-    this.offer = new offerInteraction(page);
+    this.setup()
   }
 
-  async runTest() {
-    this.dataset.forEach(item => {
-      test("paso 1 de 4", async () => {
-        await this.offer.screenOffer(item.textOffer, item.stepOffer);
-      });
-    });
+  async setup() {
+    this.offer = new offerInteraction(this.page)
   }
+
+  async ofertas(
+    data: formData
+  ){
+    await this.offer.screenOffer(data.textScreen, data.step)
+  }
+
+  async escogerFecha(){
+    await this.offer.selectFecha()
+  }
+
+  async continuar(){
+    await this.offer.siguiente()
+  }
+
+
+
 }
-
 export default offerTask

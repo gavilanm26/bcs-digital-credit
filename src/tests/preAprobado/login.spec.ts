@@ -1,32 +1,26 @@
 import {test} from "@playwright/test"
-import baseTest from "./baseTest"
+import baseTest from "../hooks/baseTest"
 import dataset from "../../utils/dataset";
-test.describe.parallel.only('Login', async () => {
-  let base
+import FormData from "../hooks/formData";
+test.describe.parallel('Login', async () => {
+  let base, formData
 
-  test.beforeEach(async({page}) => {
-    base = new baseTest(page)
-    await base.visitPage()
+  for (const data of dataset) {
+    formData = new FormData(data);
 
-  })
-  for (const data of dataset){
+    test.beforeEach(async({page}) => {
+      base = new baseTest(page)
+      await base.visitPage()
+
+    })
+
     test(`cliente ${data.documentNumberPP} con canales digitales`, async () => {
-      const loginData = {
-        number: data.documentNumberPP,
-        textPassword: data.textPassword,
-        password: data.password, textIV:
-        data.textIV
-      }
-      await base.login(loginData)
+      await base.login(formData)
     })
 
     test(`cliente ${data.documentNumberIV} sin canales digitales`, async () => {
-      const loginData = {
-        number: data.documentNumberIV,
-        textPassword: data.textPassword,
-        textIV: data.textIV
-      }
-      await base.login(loginData)
+      formData.number = data.documentNumberIV
+      await base.login(formData)
     })
   }
 })
