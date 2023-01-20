@@ -1,5 +1,5 @@
-import formData from "../../models/preAprobado/interfaces/interfaceData";
-import offerInteraction from "../../interactions/preAprobado/offerInteraction";
+import formData from "../../models/preAprobado/interfaces/interfaceData"
+import offerInteraction from "../../interactions/preAprobado/offerInteraction"
 
 const offerTask = class {
   private readonly page

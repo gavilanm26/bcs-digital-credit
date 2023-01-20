@@ -11,6 +11,59 @@
     "textAccount": "Seleccionar cuenta",
     "stepAccount": "Paso 2 de 4",
     "checkYes": "yes",
-    "checkNo": "no"
+    "checkNo": "no",
+    "textBeneficiary": "Seguro de vida",
+    "stepBeneficiary": "Paso 2 de 4",
+    "benefi": {
+      "one": "1",
+      "two": "2",
+      "three": "3"
+    },
+    "details": "Detalles del seguro de vida",
+    "fNames": {
+      "name1": "Homer",
+      "name2": "Marge",
+      "name3": "Bart"
+    },
+    "lastname": "Simpson",
+    "relationship": {
+      "padres": "07",
+      "hijos": "03",
+      "conyuge": "02",
+      "hermanos": "08",
+      "Abuelos": "11",
+      "nietos": "06",
+      "tios": "09",
+      "sobrinos": "10"
+    },
+    "percentage": {
+      "ten": "10",
+      "twenty": "20",
+      "thirty": "30",
+      "forty": "40",
+      "fifty": "50",
+      "sixty": "60",
+      "seventy": "70",
+      "eighty": "80",
+      "ninety": "90",
+      "oneHundred": "100"
+    },
+    "textResumen": "Verificación de información",
+    "stepResumen": "Paso 3 de 4",
+    "textPromisory": "Firma de pagaré",
+    "stepPromisory": "Paso 4 de 4",
+    "textModal": "Firmar pagaré",
+    "tittlePromisory": "A continuación encontrará el pagaré.",
+    "textOTC": "Firma de pagaré",
+    "stepOTC": "Paso 4 de 4",
+    "tittleOTC": "Firme el pagaré con el código recibido",
+    "tittleStars1": "Muy mala",
+    "questionStar1": "¿Qué salió mal?",
+    "tittleStars2": "Regular",
+    "tittleStars3": "Buena",
+    "questionStar3": "¿Qué podemos mejorar?",
+    "tittleStars4": "Muy Buena",
+    "questionStar4": "¿Qué destaca de la experiencia?",
+    "tittleStars5": "Excelente"
   }
 ]
