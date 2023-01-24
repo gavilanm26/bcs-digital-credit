@@ -1,5 +1,5 @@
 import beneficiaryInteraction from "../../interactions/preAprobado/beneficiaryInteraction"
-import formData from "../../models/preAprobado/interfaces/interfaceData"
+import { datos } from "../../models/preAprobado/interfaces/interfaceData";
 
 const beneficiaryTask = class {
   private readonly page
@@ -13,7 +13,7 @@ const beneficiaryTask = class {
     this.beneficiary = new beneficiaryInteraction(this.page)
   }
   async confirmScreen(
-    data: formData
+    data: datos
   ){
     await this.beneficiary.screenBeneficiary(
       data.textBeneficiary,
@@ -21,7 +21,7 @@ const beneficiaryTask = class {
   }
 
   async seguro(
-    data: formData
+    data: datos
   ){
     await this.beneficiary.beneficiaries(
       data.selectBeneficiaries,

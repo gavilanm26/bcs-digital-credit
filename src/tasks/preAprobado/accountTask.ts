@@ -1,5 +1,5 @@
 import accountsInteractions from "../../interactions/preAprobado/accountsInteractions"
-import formData from "../../models/preAprobado/interfaces/interfaceData"
+import { datos } from "../../models/preAprobado/interfaces/interfaceData";
 
 const accountTask = class {
   private readonly page
@@ -15,12 +15,12 @@ const accountTask = class {
   }
 
   async cuentas(
-    data: formData
+    data: datos
   ){
     await this.account.screenAccounts(data.textScreen2, data.stepAccount2)
   }
   async terms(
-    data: formData
+    data: datos
   ){
     if (data.authorize ==='yes'){
       await this.account.selectAccountY()

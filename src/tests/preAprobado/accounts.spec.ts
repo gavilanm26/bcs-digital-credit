@@ -3,7 +3,7 @@ import baseTest from "../hooks/baseTest";
 import dataset from "../../utils/dataset";
 import FormData from "../hooks/formData";
 
-test.describe.parallel('Seleccionar cuenta', async () => {
+test.describe('Seleccionar cuenta', async () => {
   let base, formData
 
   for (const data of dataset) {
@@ -16,7 +16,7 @@ test.describe.parallel('Seleccionar cuenta', async () => {
       await base.offers(formData)
     })
 
-    test('Paso 2 de 4, si autorizo debito automatico', async () => {
+    test('Paso 2 de 4, si autorizo debito automatico @regresionPreAprobado', async () => {
       await base.accounts(formData)
     })
     test('Paso 2 de 4, no autorizo debito automatico', async () => {

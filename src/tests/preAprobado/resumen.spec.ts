@@ -3,7 +3,7 @@ import baseTest from "../hooks/baseTest";
 import dataset from "../../utils/dataset";
 import FormData from "../hooks/formData";
 
-test.describe.parallel('Resumen', async () => {
+test.describe('Resumen', async () => {
   let base, formData
 
   for (const data of dataset) {
@@ -18,7 +18,7 @@ test.describe.parallel('Resumen', async () => {
       await base.beneficiarios(formData)
     })
 
-    test('Paso 3 de 4, Validar datos seleccionados', async () => {
+    test('Paso 3 de 4, Validar datos seleccionados @regresionPreAprobado', async () => {
       await base.resumen(formData)
     })
   }

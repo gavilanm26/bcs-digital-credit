@@ -14,6 +14,12 @@ const offerInteractions = class extends offerUI {
   async siguiente(){
     await this.btnOferta.click()
   }
+
+  async endpoints(page){
+    page.on("response", async (response) => {
+      expect(response.status()).toBe(200);
+    })
+  }
 }
 
 export default offerInteractions

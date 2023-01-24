@@ -2,7 +2,7 @@ import {test} from "@playwright/test"
 import baseTest from "../hooks/baseTest"
 import dataset from "../../utils/dataset";
 import FormData from "../hooks/formData";
-test.describe.parallel('Login', async () => {
+test.describe('Login', async () => {
   let base, formData
 
   for (const data of dataset) {
@@ -11,10 +11,9 @@ test.describe.parallel('Login', async () => {
     test.beforeEach(async({page}) => {
       base = new baseTest(page)
       await base.visitPage()
-
     })
 
-    test(`cliente ${data.documentNumberPP} con canales digitales`, async () => {
+    test(`cliente ${data.documentNumberPP} con canales digitales @regresionPreAprobado`, async () => {
       await base.login(formData)
     })
 

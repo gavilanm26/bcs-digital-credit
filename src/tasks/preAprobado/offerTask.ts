@@ -1,4 +1,4 @@
-import formData from "../../models/preAprobado/interfaces/interfaceData"
+import { datos } from "../../models/preAprobado/interfaces/interfaceData";
 import offerInteraction from "../../interactions/preAprobado/offerInteraction"
 
 const offerTask = class {
@@ -15,7 +15,7 @@ const offerTask = class {
   }
 
   async ofertas(
-    data: formData
+    data: datos
   ){
     await this.offer.screenOffer(data.textScreen, data.step)
   }

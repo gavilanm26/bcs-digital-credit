@@ -1,4 +1,4 @@
-import formData from "../../models/preAprobado/interfaces"
+import { datos } from "../../models/preAprobado/interfaces/interfaceData";
 import resumenInteraction from "../../interactions/preAprobado/resumenInteraction"
 const resumenTask = class {
   private readonly page
@@ -13,7 +13,7 @@ const resumenTask = class {
     this.resum = new resumenInteraction(this.page)
   }
   async confirmScreenResumen(
-    data: formData
+    data: datos
   ){
     await this.resum.screenSummary(
       data.textResumen,

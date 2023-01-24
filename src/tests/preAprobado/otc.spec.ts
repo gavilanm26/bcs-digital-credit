@@ -1,9 +1,9 @@
 import { test } from '@playwright/test'
-import baseTest from "../hooks/baseTest";
-import dataset from "../../utils/dataset";
-import FormData from "../hooks/formData";
+import baseTest from "../hooks/baseTest"
+import dataset from "../../utils/dataset"
+import FormData from "../hooks/formData"
 
-test.describe.parallel.only('Paso 4 de 4', async () => {
+test.describe('Paso 4 de 4', async () => {
   let base, formData
 
   for (const data of dataset) {
@@ -20,7 +20,13 @@ test.describe.parallel.only('Paso 4 de 4', async () => {
       await base.promisoryNote(formData)
     })
 
-    test('Ingresar OTC', async () => {
+    test('Ingresar OTC exitoso @regresionPA', async () => {
+      await base.OTC(formData)
+    })
+    test('Ingresar OTC fallido @regresionPA', async () => {
+      await base.OTC(formData)
+    })
+    test('Ingresar OTC 3 veces fallidos @regresionPA', async () => {
       await base.OTC(formData)
     })
   }

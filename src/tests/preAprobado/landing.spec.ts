@@ -1,20 +1,20 @@
 import { test } from '@playwright/test'
-import urlUI from '../../UI/preAprobado/urlUI'
-import landingInteraction from '../../interactions/preAprobado/landingInteraction'
+import baseTest from "../hooks/baseTest";
+import dataset from "../../utils/dataset";
+import FormData from "../hooks/formData";
 
 test.describe('Ingreso a Crédito amigo digital', () => {
+    let base, formData
 
-    let url
-    let landing
+    for (const data of dataset) {
+        formData = new FormData(data)
 
-    test.beforeEach(async ({ page }) => {
-        url = new urlUI(page)
-        landing = new landingInteraction(page)
-        await url.visit()
-    })
+        test.beforeEach(async ({ page }) => {
+            base = new baseTest(page)
+        })
 
-    test('Hago Clic en ¡Solicitar mi crédito!', async () => {
-        await landing.landingVerify()
-        await landing.clickButton()
-    })
+        test('Hago Clic en ¡Solicitar mi crédito! @regresionPreAprobado', async () => {
+            await base.visitPage()
+        })
+    }
 })

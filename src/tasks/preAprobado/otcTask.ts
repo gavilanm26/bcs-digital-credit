@@ -1,4 +1,4 @@
-import formData from "../../models/preAprobado/interfaces"
+import { datos } from "../../models/preAprobado/interfaces/interfaceData";
 import otcInteraction from "../../interactions/preAprobado/otcInteraction"
 const otcTask = class {
   private readonly page
@@ -14,7 +14,7 @@ const otcTask = class {
   }
 
   async confirmScreenOTC(
-    data: formData
+    data: datos
   ){
     await this.otc.screenOTC(
       data.textOTC,

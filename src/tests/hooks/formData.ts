@@ -41,6 +41,17 @@ const FormData = class {
   private textOTC: string
   private stepOTC: string
   private tittleOTC: string
+  private star: number
+  private textQualify: string
+  private tittleStars1: string
+  private tittleStars2: string
+  private tittleStars3: string
+  private tittleStars4: string
+  private tittleStars5: string
+  private questionStar1: string
+  private questionStar3: string
+  private questionStar4: string
+
 
   constructor(data) {
     this.number = data.documentNumberPP
@@ -86,6 +97,16 @@ const FormData = class {
     this.textOTC = data.textOTC
     this.stepOTC = data.stepOTC
     this.tittleOTC = data.tittleOTC
+    this.textQualify = data.textQualify
+    this.tittleStars1 = data.tittleStars1
+    this.tittleStars2 = data.tittleStars2
+    this.tittleStars3 = data.tittleStars3
+    this.tittleStars4 = data.tittleStars4
+    this.tittleStars5 = data.tittleStars5
+    this.questionStar1 = data.questionStar1
+    this.questionStar3 = data.questionStar3
+    this.questionStar4 = data.questionStar4
+    this.star = 5
   }
 }
 

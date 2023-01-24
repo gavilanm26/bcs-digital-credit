@@ -1,4 +1,4 @@
-interface formData {
+export interface datos {
   number?: string
   textPassword?: string
   password?: string
@@ -42,4 +42,13 @@ interface formData {
   textOTC?: string
   stepOTC?: string
   tittleOTC?: string
+  textQualify?: string
+  tittleStars1?: string
+  tittleStars2?: string
+  tittleStars3?: string
+  tittleStars4?: string
+  tittleStars5?: string
+  questionStar1?: string
+  questionStar3?: string
+  questionStar4?: string
 }

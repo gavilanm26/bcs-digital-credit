@@ -1,4 +1,4 @@
-import formData from "../../models/preAprobado/interfaces"
+import { datos } from "../../models/preAprobado/interfaces/interfaceData";
 import promisoryNoteInteraction from "../../interactions/preAprobado/promisoryNoteInteraction";
 
 const promisoryNoteTask = class {
@@ -15,7 +15,7 @@ const promisoryNoteTask = class {
   }
 
   async confirmScreenPromisory(
-    data: formData
+    data: datos
   ){
     await this.promisory.screenPromisory(
       data.textPromisory,
