@@ -26,6 +26,7 @@ const qualifyTask = class {
     data: datos
   ){
     await this.qualify.questions(
+      data.star,
       data.tittleStars1,
       data.tittleStars2,
       data.tittleStars3,
@@ -41,6 +42,9 @@ const qualifyTask = class {
   }
   async finishPP(){
     await this.qualify.clickBtnFinish()
+  }
+  async confirmScreenCongratulations(data: datos){
+    await this.qualify.screenCongratulations(data.textCongratulations)
   }
 }
 

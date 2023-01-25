@@ -16,12 +16,21 @@ const congratulationsUI = class {
   protected readonly questionStar4: Locator
   protected readonly tittleStars5: Locator
   protected readonly response1S3: Locator
+  protected readonly response2S3: Locator
+  protected readonly response3S3: Locator
+  protected readonly response4S3: Locator
+  protected readonly response5S3: Locator
+  protected readonly response1S5: Locator
   protected readonly response2S5: Locator
+  protected readonly response3S5: Locator
+  protected readonly response4S5: Locator
+  protected readonly response5S5: Locator
   protected readonly resposeOther: Locator
+  protected readonly textArea: Locator
 
   protected readonly btnContinue: Locator
   protected readonly closeQuestions: Locator
-  protected readonly textCongratulitions: Locator
+  protected readonly textCongratulations: Locator
   protected readonly bntFinish: Locator
 
   constructor(page: Page) {
@@ -40,11 +49,16 @@ const congratulationsUI = class {
     this.questionStar4 = page.getByText('¿Qué destaca de la experiencia?')
     this.tittleStars5 = page.getByText('Excelente')
     this.response1S3 = page.getByText('Proceso muy largo')
+    this.response2S3 = page.getByText('No me dio confianza')
+    this.response3S3 = page.getByText('Faltó acompañamiento')
+    this.response4S3 = page.getByText('No entendí qué debía hacer')
+    this.response5S3 = page.getByText('Otro')
+    this.textArea = page.locator('textarea[name="observation"]')
     this.response2S5 = page.getByText('Seguridad')
     this.resposeOther = page.getByText('Otro')
     this.btnContinue = page.getByRole('button', { name: 'Continuar' })
     this.closeQuestions = page.getByRole('button').nth(1)
-    this.textCongratulitions = page.getByText('ha finalizado su proceso de solicitud')
+    this.textCongratulations = page.getByText('¡Felicitaciones!')
     this.bntFinish = page.getByRole('button', { name: 'Finalizar' })
   }
 }

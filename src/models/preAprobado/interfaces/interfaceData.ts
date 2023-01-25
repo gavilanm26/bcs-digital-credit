@@ -51,4 +51,6 @@ export interface datos {
   questionStar1?: string
   questionStar3?: string
   questionStar4?: string
+  star?: number
+  textCongratulations?: string
 }

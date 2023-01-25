@@ -15,11 +15,10 @@ const interceptResponses = async (page) => {
       responses.push({
         url: response.url(),
         status: response.status(),
-        duration: duration,
-        response: await response.json()
+        duration: duration / 1000,
+        response: response.json()
       })
     }
   })
 }
 export default interceptResponses
-

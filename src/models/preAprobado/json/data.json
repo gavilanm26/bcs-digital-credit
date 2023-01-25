@@ -65,6 +65,8 @@
     "questionStar3": "¿Qué podemos mejorar?",
     "tittleStars4": "Muy Buena",
     "questionStar4": "¿Qué destaca de la experiencia?",
-    "tittleStars5": "Excelente"
+    "tittleStars5": "Excelente",
+    "star": 5,
+    "textCongratulations": "¡Felicitaciones!"
   }
 ]

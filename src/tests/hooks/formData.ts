@@ -51,6 +51,7 @@ const FormData = class {
   private questionStar1: string
   private questionStar3: string
   private questionStar4: string
+  private textCongratulations: string
 
 
   constructor(data) {
@@ -106,7 +107,8 @@ const FormData = class {
     this.questionStar1 = data.questionStar1
     this.questionStar3 = data.questionStar3
     this.questionStar4 = data.questionStar4
-    this.star = 5
+    this.star = data.star
+    this.textCongratulations = data.textCongratulations
   }
 }
 

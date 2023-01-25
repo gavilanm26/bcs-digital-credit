@@ -12,7 +12,7 @@ const config : PlaywrightTestConfig = {
     forbidOnly: !!process.env.CI,
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
-    reporter: 'html',
+    reporter: [['html'], ['allure-playwright']],
     retries: 0,
     use: {
         headless: true,

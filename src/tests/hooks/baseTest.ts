@@ -83,11 +83,13 @@ class baseTest {
     await this.qualifyTask.confirmScreenqualify(data)
     await this.qualifyTask.formQualify(data)
     await this.qualifyTask.continueFinish()
+    await this.qualifyTask.confirmScreenCongratulations(data)
     await this.qualifyTask.finishPP()
   }
   async noQualify(data: datos) {
     await this.qualifyTask.confirmScreenqualify(data)
     await this.qualifyTask.formQualify(data)
+    await this.qualifyTask.confirmScreenCongratulations(data)
     await this.qualifyTask.finishPP()
   }
 }
