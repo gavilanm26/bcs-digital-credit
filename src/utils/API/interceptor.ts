@@ -7,7 +7,7 @@ const interceptResponses = async (page) => {
       const startTime = new Date().getTime();
       console.log(`Intercepted url: ${response.url()}`)
       console.log(`Status: ${response.status()}`)
-      console.log(await response.text())
+      console.log(await response.json())
       const endTime = new Date().getTime()
       const duration = endTime - startTime
       console.log(`Duration: ${duration}s`)

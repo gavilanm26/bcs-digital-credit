@@ -2,8 +2,9 @@ import { test } from '@playwright/test'
 import baseTest from "../hooks/baseTest"
 import dataset from "../../utils/dataset"
 import FormData from "../hooks/formData"
-test.describe('Felicitaciones', async () => {
-  let base, formData
+import interceptResponses from "../../utils/API/interceptor";
+test.describe.only('Felicitaciones', async () => {
+  let base, formData, responses = []
 
   for (const data of dataset) {
     formData = new FormData(data)
@@ -11,6 +12,7 @@ test.describe('Felicitaciones', async () => {
     test.beforeEach(async ({ page }) => {
       base = new baseTest(page)
       await base.visitPage()
+      await interceptResponses(page)
       await base.login(formData)
       await base.offers(formData)
       await base.accounts(formData)
@@ -36,7 +38,7 @@ test.describe('Felicitaciones', async () => {
       formData.star = 4
       await base.qualify(formData)
     })
-    test('Calificar con 5 estrellas', async () => {
+    test.only('Calificar con 5 estrellas', async () => {
       formData.star = 5
       await base.qualify(formData)
     })
@@ -44,6 +46,9 @@ test.describe('Felicitaciones', async () => {
       formData.star = 0
       await base.noQualify(formData)
     })
-
+    test.afterEach(async () => {
+      console.log(responses)
+      responses = []
+    })
   }
 })
