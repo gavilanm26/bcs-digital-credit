@@ -29,5 +29,4 @@ const offerUI = class {
     this.btnOferta = page.getByRole('button', { name: 'Continuar' })
   }
 }
-
 export default offerUI
