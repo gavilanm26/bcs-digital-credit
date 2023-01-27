@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 import loginUI from "../../UI/preAprobado/loginUI";
-const loginInteraction = class extends loginUI{
+const  loginInteraction = class extends loginUI{
   async digitals(documentNumber: string) {
     await this.selectDT.click()
     await this.selectCC.click()
