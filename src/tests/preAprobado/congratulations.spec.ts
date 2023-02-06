@@ -38,7 +38,7 @@ test.describe.only('Felicitaciones', async () => {
       formData.star = 4
       await base.qualify(formData)
     })
-    test.only('Calificar con 5 estrellas', async () => {
+    test('Calificar con 5 estrellas @smock', async () => {
       formData.star = 5
       await base.qualify(formData)
     })

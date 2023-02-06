@@ -19,7 +19,7 @@ test.describe('Firma de pagarpé', async () => {
       await base.resumen(formData)
     })
 
-    test('Paso 4 de 4, firmar @regresionPreAprobado', async () => {
+    test('Paso 4 de 4, firmar @smock', async () => {
       await base.promisoryNote(formData)
     })
   }

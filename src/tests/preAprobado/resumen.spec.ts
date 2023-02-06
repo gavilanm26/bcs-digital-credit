@@ -18,7 +18,7 @@ test.describe('Resumen', async () => {
       await base.beneficiarios(formData)
     })
 
-    test('Paso 3 de 4, Validar datos seleccionados @regresionPreAprobado', async () => {
+    test('Paso 3 de 4, Validar datos seleccionados @smock', async () => {
       await base.resumen(formData)
     })
   }

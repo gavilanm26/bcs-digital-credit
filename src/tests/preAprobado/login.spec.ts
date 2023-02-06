@@ -13,7 +13,7 @@ test.describe('Login', async () => {
       await base.visitPage()
     })
 
-    test(`cliente ${data.documentNumberPP} con canales digitales @regresionPreAprobado`, async () => {
+    test(`cliente ${data.documentNumberPP} con canales digitales @smock`, async () => {
       await base.login(formData)
     })
 

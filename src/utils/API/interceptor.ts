@@ -8,6 +8,7 @@ const interceptResponses = async (page) => {
       const startTime = new Date().getTime();
       console.log(`Intercepted url: ${response.url()}`)
       console.log(`Status: ${response.status()}`)
+
       if (response.status() === 200 &&
           response.headers()['content-length']!=='0'
       ) {

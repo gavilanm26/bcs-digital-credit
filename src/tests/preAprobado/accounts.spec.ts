@@ -16,7 +16,7 @@ test.describe('Seleccionar cuenta', async () => {
       await base.offers(formData)
     })
 
-    test('Paso 2 de 4, si autorizo debito automatico @regresionPreAprobado', async () => {
+    test('Paso 2 de 4, si autorizo debito automatico @smock', async () => {
       await base.accounts(formData)
     })
     test('Paso 2 de 4, no autorizo debito automatico', async () => {

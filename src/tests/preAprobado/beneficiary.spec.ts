@@ -26,7 +26,7 @@ test.describe('Seguro de vida, paso 2 de 4', async () => {
       await base.beneficiarios(formData)
     })
 
-    test('Registrar 3 beneficiario @regresionPreAprobado', async () => {
+    test('Registrar 3 beneficiario @smock', async () => {
       formData.selectBeneficiaries = data.benefi.three
       await base.beneficiarios(formData)
     })

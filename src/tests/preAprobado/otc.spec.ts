@@ -20,7 +20,7 @@ test.describe('Paso 4 de 4', async () => {
       await base.promisoryNote(formData)
     })
 
-    test('Ingresar OTC exitoso @regresionPA', async () => {
+    test('Ingresar OTC exitoso @smock', async () => {
       await base.OTC(formData)
     })
     test('Ingresar OTC fallido @regresionPA', async () => {

@@ -16,7 +16,7 @@ test.describe('Personalización de la oferta', async () => {
       await base.login(formData)
     })
 
-    test('paso 1 de 4, Oferta Activa @regresionPreAprobado', async () => {
+    test('paso 1 de 4, Oferta Activa @smok', async () => {
       await base.offers(formData)
     })
   }

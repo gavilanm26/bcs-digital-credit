@@ -1,6 +1,5 @@
 import {PlaywrightTestConfig, devices } from '@playwright/test'
 
-
 const config : PlaywrightTestConfig = {
     testDir: './src/tests/',
     timeout: 200 * 1000,
@@ -23,7 +22,7 @@ const config : PlaywrightTestConfig = {
         actionTimeout: 0,
         navigationTimeout: 30 * 1000,
         ignoreHTTPSErrors: true,
-        video: 'on-first-retry',
+        video: 'on',
         screenshot: 'only-on-failure',
         baseURL: "https://qa.bancocajasocialsa.org",
         trace: 'on'
@@ -49,21 +48,27 @@ const config : PlaywrightTestConfig = {
         },
         /* Test against mobile viewports. */
         {
-            name: 'Pixel5',
+            name: 'S9',
             use: {
-                ...devices['Pixel 5'],
+                ...devices['Galaxy S8'],
             },
         },
         {
-            name: 'Iphone12',
+            name: 'Iphone13pro',
             use: {
-                ...devices['iPhone 12'],
+                ...devices['iPhone 13 Pro'],
             },
         },
         {
-            name: 'GalaxyS5',
+            name: 'iPad',
             use: {
-                ...devices['"Moto G4'],
+                ...devices['iPad Pro 11'],
+            },
+        },
+        {
+            name: 'Nokia320',
+            use: {
+                ...devices['Nokia Lumia 520'],
             },
         },
         /* Test against branded browsers. */
