@@ -4,7 +4,7 @@
   "description": "Automated software testing with Playwright",
   "main": "index.js",
   "scripts": {
-    "smock": "playwright test --config=playwright.config.ts --project=Google-Chrome --headed --grep @smock",
+    "smock-test": "playwright test --config=playwright.config.ts --project=Google-Chrome --headed --grep @smock",
     "test:desktop-chromium": "playwright test --config=playwright.config.ts --project=Chromium --headed",
     "test:desktop-firefox": "playwright test --config=playwright.config.ts --project=Firefox --headed",
     "test:desktop-chrome": "playwright test --config=playwright.config.ts --project=Google-Chrome --headed",

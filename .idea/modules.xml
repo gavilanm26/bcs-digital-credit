@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bcs-credito-digital.iml" filepath="$PROJECT_DIR$/bcs-credito-digital.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bcs-loans-qa-automation.iml" filepath="$PROJECT_DIR$/bcs-loans-qa-automation.iml" />
     </modules>
   </component>
 </project>
